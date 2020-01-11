@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vuforia;
 
 public class RobotFollowBehavior : MonoBehaviour {
 
@@ -15,6 +16,8 @@ public class RobotFollowBehavior : MonoBehaviour {
 	}
 
 	private DefaultTrackableEventHandler currImageTarget;
+	private TrackableBehaviour statusChecker;
+	private bool isTracking = false;
 	private bool canMove = true;
 
 	private void Awake () {
@@ -22,10 +25,15 @@ public class RobotFollowBehavior : MonoBehaviour {
 	}
 
 	private void Update () {
-		
+
+		//if (canMove) {StartCoroutine (MoveRobot ("f"));}
+		if (isTracking) {StartCoroutine (MoveRobot ("b"));}
+
 		if (currImageTarget != null) {
 
-			if (currImageTarget.isTracking && canMove) {
+
+			//if (currImageTarget.isTracking && canMove) {
+			if (isTracking && canMove) {
 
 				//handle side to side with priority
 				if (currImageTarget.transform.position.x < -X__BOUND) {
@@ -65,5 +73,9 @@ public class RobotFollowBehavior : MonoBehaviour {
 
 	public void SetNewTarget (GameObject newTracker) {
 		currImageTarget = newTracker.GetComponent<DefaultTrackableEventHandler> ();
+		statusChecker = newTracker.GetComponent<TrackableBehaviour>();
+		var status = statusChecker.CurrentStatus;
+		Debug.Log("Status: " + status);
+		isTracking = (status == TrackableBehaviour.Status.TRACKED);
 	}
 }

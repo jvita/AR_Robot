@@ -14,7 +14,8 @@ public class SendMessageBehavior : MonoBehaviour {
 	}
 
 	[Header ("NODE MCU IP ADDRESS or COMPUTER IP ADDRESS")]
-	public string serverIP;
+	public string serverIP = "192.168.0.129";  // MCU ip
+	//public string serverIP = "192.168.0.115";  // computer ip
 
 	private const int PORT_NUM = 1998;
 	private IPAddress serverAddr;

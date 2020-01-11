@@ -11,7 +11,7 @@ public class Client : MonoBehaviour {
 	public bool enableLog = false;
 
 	const int port = 1999;
-	public string phoneIP = "";//mobile phone IPaddress
+	public string phoneIP = "192.168.0.126";//mobile phone IPaddress
 	TcpClient client;
 
 	Texture2D tex;

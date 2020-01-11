@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -430,7 +430,6 @@ MonoBehaviour:
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/VuforiaMars_Images.xml
-  mExtendedTracking: 0
   mAspectRatio: 1
   mImageTargetType: 1
   mWidth: 0.2
@@ -499,7 +498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTracking: 0
 --- !u!4 &381828732
 Transform:
   m_ObjectHideFlags: 0
@@ -542,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9e484d681b64ef28720404148a699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverIP: 192.168.1.179
+  serverIP: 192.168.0.129
 --- !u!4 &847582666
 Transform:
   m_ObjectHideFlags: 0
