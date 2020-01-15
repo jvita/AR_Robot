@@ -34,7 +34,6 @@ public class RobotFollowBehavior : MonoBehaviour {
 		IEnumerable<TrackableBehaviour> activeTrackables = sm.GetActiveTrackableBehaviours();
 
 		foreach (TrackableBehaviour tb in activeTrackables) {
-
 			if (isTracking && canMove) {
 
 				Debug.Log("(x, z): " + currImageTarget.transform.position.x + currImageTarget.transform.position.z);
@@ -78,7 +77,10 @@ public class RobotFollowBehavior : MonoBehaviour {
 	public void SetNewTarget(GameObject newTracker) {
 		currImageTarget = newTracker.GetComponent<DefaultTrackableEventHandler>();
 		statusChecker = newTracker.GetComponent<TrackableBehaviour>();
+		//var status = statusChecker.CurrentStatus;
 		var status = statusChecker.CurrentStatus;
+		Debug.Log("HELLO-------------------- Status: " + status);
+		//isTracking = (status == TrackableBehaviour.Status.TRACKED);
 		isTracking = (status == TrackableBehaviour.Status.UNDEFINED);
 	}
 }
